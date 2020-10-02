@@ -1,12 +1,14 @@
 package hu.bme.aut.android.gymbuddy.model
 
 data class Workout(
-    val name: String,
-    val exercises: List<Exercise>
+    var name: String,
+    var id: String? = null,
+    var exercises: MutableList<Exercise> = mutableListOf()
 ) {
-    fun getMuscleGroups(): String {
-        val groups: MutableSet<MuscleGroup> = mutableSetOf()
-        exercises.forEach { groups.add(it.muscleGroup) }
-        return groups.sorted().joinToString(", ")
-    }
+    fun asDbWorkout() = DbWorkout(name, exercises.map { exercise -> exercise.id!! }.toList())
 }
+
+data class DbWorkout(
+    var name: String = "",
+    var exercises: List<String> = mutableListOf()
+)

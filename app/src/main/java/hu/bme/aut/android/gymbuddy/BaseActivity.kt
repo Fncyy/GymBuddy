@@ -10,14 +10,11 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    protected val firebaseUser: FirebaseUser?
+    private val firebaseUser: FirebaseUser?
         get() = FirebaseAuth.getInstance().currentUser
 
     protected val uid: String?
         get() = firebaseUser?.uid
-
-    protected val userName: String?
-        get() = firebaseUser?.displayName
 
     protected val userEmail: String?
         get() = firebaseUser?.email
@@ -34,4 +31,8 @@ abstract class BaseActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
+    companion object {
+        var uid: String? = null
+        var email: String? = null
+    }
 }

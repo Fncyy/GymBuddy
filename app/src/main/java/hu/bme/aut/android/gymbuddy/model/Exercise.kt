@@ -1,12 +1,24 @@
 package hu.bme.aut.android.gymbuddy.model
 
+import java.util.*
+
 data class Exercise(
-    val name: String,
-    val muscleGroup: MuscleGroup,
-    val weightData: List<Set>
+    var name: String,
+    var muscleGroup: MuscleGroup,
+    var weightData: MutableList<Set> = mutableListOf(),
+    var id: String? = null
+) {
+    fun asDbExercise() = DbExercise(name, muscleGroup, weightData)
+}
+
+data class DbExercise(
+    var name: String = "",
+    var muscleGroup: MuscleGroup = MuscleGroup.Arms,
+    var weightData: MutableList<Set> = mutableListOf()
 )
 
 enum class MuscleGroup {
+    Muscles,
     Arms,
     Back,
     Chest,
@@ -16,11 +28,11 @@ enum class MuscleGroup {
 }
 
 data class Set(
-    val reps: List<Rep>
+    var reps: MutableList<Rep> = mutableListOf()
 )
 
 data class Rep(
-    val count: Int,
-    val weight: Int
+    var count: Int = -1,
+    var weight: Int = -1
 )
 

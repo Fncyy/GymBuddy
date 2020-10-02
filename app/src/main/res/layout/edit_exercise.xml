@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/default_padding">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_input_margin"
+        android:layout_marginBottom="@dimen/text_input_margin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etExerciseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Exercise name"
+            android:inputType="textAutoCorrect" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spnMuscleGroups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

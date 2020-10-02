@@ -6,34 +6,39 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_margin="10dp"
+    android:layout_margin="@dimen/default_margin"
     card_view:cardCornerRadius="4dp">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:padding="@dimen/default_padding">
 
         <ImageButton
-            android:id="@+id/btnExerciseGraph"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="12dp"
+            android:id="@+id/btnDeleteExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:src="@android:drawable/ic_delete"
+            android:tint="@android:color/black"
+            android:layout_marginEnd="@dimen/default_margin"/>
+
+        <ImageButton
+            android:id="@+id/btnEditExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="6dp"
+            android:layout_marginEnd="12dp"
             android:background="@null"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_exercise_chart" />
+            android:src="@android:drawable/ic_menu_edit" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/btnExerciseGraph"
-            android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="@dimen/default_padding">
 
             <TextView
                 android:id="@+id/tvExerciseName"
@@ -51,6 +56,6 @@
 
         </LinearLayout>
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

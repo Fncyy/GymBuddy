@@ -9,38 +9,38 @@
     android:layout_margin="10dp"
     card_view:cardCornerRadius="4dp">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:padding="@dimen/default_padding">
 
-        <LinearLayout
+        <ImageButton
+            android:id="@+id/btnWorkoutDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:layout_marginEnd="@dimen/default_margin"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:src="@android:drawable/ic_delete"
+            android:tint="@android:color/black" />
 
-            <TextView
-                android:id="@+id/tvWorkoutName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="Workout name" />
+        <ImageButton
+            android:id="@+id/btnWorkoutEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="12dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_menu_edit" />
 
-            <TextView
-                android:id="@+id/tvMuscleGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                tools:text="arms, chest"
-                android:minLines="2"
-                android:maxLines="2"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
+        <TextView
+            android:id="@+id/tvWorkoutName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Workout name" />
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

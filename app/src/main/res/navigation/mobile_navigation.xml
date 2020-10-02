@@ -10,34 +10,47 @@
         android:name="hu.bme.aut.android.gymbuddy.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
-
         <action
-            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
-            app:destination="@id/nav_home_second" />
-    </fragment>
-    <fragment
-        android:id="@+id/nav_home_second"
-        android:name="hu.bme.aut.android.gymbuddy.ui.home.HomeSecondFragment"
-        android:label="@string/home_second"
-        tools:layout="@layout/fragment_home_second">
-        <action
-            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
-            app:destination="@id/nav_home" />
-
-        <argument
-            android:name="myArg"
-            app:argType="string" />
+            android:id="@+id/action_nav_home_to_nav_home_details"
+            app:destination="@id/nav_home_details" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_exercises"
         android:name="hu.bme.aut.android.gymbuddy.ui.exercises.ExercisesFragment"
         android:label="@string/menu_exercises"
-        tools:layout="@layout/fragment_exercises" />
+        tools:layout="@layout/fragment_exercises">
+        <action
+            android:id="@+id/action_nav_exercises_to_nav_progress"
+            app:destination="@+id/nav_progress" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_progress"
         android:name="hu.bme.aut.android.gymbuddy.ui.progress.ProgressFragment"
-        android:label="@string/menu_progress"
-        tools:layout="@layout/fragment_progress" />
+        android:label="{title}"
+        tools:layout="@layout/fragment_progress">
+        <argument
+            android:name="@string/EXERCISE_ID"
+            app:argType="string" />
+        <argument
+            android:name="@string/TITLE"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_home_details"
+        android:name="hu.bme.aut.android.gymbuddy.ui.workoutDetails.WorkoutDetailsFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_workout_details">
+        <argument
+            android:name="@string/WORKOUT_ID"
+            app:argType="string" />
+        <argument
+            android:name="@string/TITLE"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_home_details_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>

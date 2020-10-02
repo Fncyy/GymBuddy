@@ -9,6 +9,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -35,7 +36,9 @@ class LoginActivity : BaseActivity() {
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        if (firebaseUser != null) {
+        if (uid != null) {
+            BaseActivity.uid = uid
+            BaseActivity.email = userEmail
             startActivity(Intent(this@LoginActivity, GymActivity::class.java))
             finish()
         }
@@ -76,6 +79,8 @@ class LoginActivity : BaseActivity() {
         firebaseAuth
             .signInWithEmailAndPassword(etEmail.text.toString(), etPassword.text.toString())
             .addOnSuccessListener {
+                BaseActivity.uid = uid
+                //TODO logoutnal null-ra allitani
                 hideProgressDialog()
                 startActivity(Intent(this@LoginActivity, GymActivity::class.java))
                 finish()

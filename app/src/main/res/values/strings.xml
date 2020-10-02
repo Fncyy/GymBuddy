@@ -10,8 +10,19 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_exercises">Exercises</string>
-    <string name="menu_progress">Progress</string>
     <string name="menu_logout">Logout</string>
 
     <string name="home_second">Home Second</string>
+
+    <string name="workout_detail_et_weight_text">Weight:</string>
+    <string name="workout_detail_et_rep_text">Repetitions:</string>
+    <string name="workout_detail_save_workout">Save workout</string>
+    <string name="workout_detail_remove_exercise">Remove exercise</string>
+    <string name="workout_detail_save_exercise">Save exercise</string>
+    <string name="workout_detail_add_exercise">Add exercise</string>
+
+    <string name="WORKOUT_ID">workoutID</string>
+    <string name="EXERCISE_ID">exerciseID</string>
+    <string name="TITLE">title</string>
+    <string name="add_exercise">Create exercise</string>
 </resources>

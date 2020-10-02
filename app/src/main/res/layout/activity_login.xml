@@ -23,8 +23,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginTop="@dimen/text_input_margin"
+            android:layout_marginBottom="@dimen/text_input_margin">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
@@ -39,8 +39,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/text_input_margin"
+            android:layout_marginBottom="@dimen/text_input_margin"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
